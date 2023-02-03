@@ -2,10 +2,13 @@
   import { ref, shallowRef, computed, watch, nextTick } from 'vue'
   import Chart from 'chart.js/auto'
 
+//constants
   const weights = ref([])
   const weightChartEl = ref(null)
   const weightChart = shallowRef(null)
   const weightInput = ref(60.0)
+
+//functions
   const currentWeight = computed(() => {
     return weights.value.sort((a, b) => b.date - a.date)[0] || { weight: 0 }
     })
@@ -20,7 +23,17 @@
 </script>
 
 <template>
-  <h1>Hello World</h1>
+  <main>
+    <h1>WEIGHT TRACKER</h1>
+    <div class="current">
+      <span>{{ currentWeight.weight }}</span>
+      <small>Current weight (kg)</small>
+      <form @submit.prevent="addWeight">
+        <input type="number" step="0.1" v-model="weightInput">
+        <input type="submit" value="Add weight">
+      </form>
+    </div>
+  </main>
 </template>
 
 <style scoped>
