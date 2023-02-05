@@ -80,7 +80,7 @@
     </div>
     <form @submit.prevent="addWeight">
       <input type="number" step="0.1" v-model="weightInput" class="weightInput">
-      <input type="submit" value="Add weight"  class="weightSubmit">
+      <input type="submit" value="ADD WEIGHT"  class="weightSubmit">
     </form>
 
     <div v-if="weights && weights.length > 0">
@@ -94,7 +94,7 @@
         <ul>
           <li v-for="weight in weights" :key="weight.date">
             <span>
-              {{ weight.weight }}kg
+              {{ weight.weight }} kg
             </span>
             <small>
               {{ new Date(weight.date).toLocaleDateString() }}
