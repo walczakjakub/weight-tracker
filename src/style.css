@@ -1,7 +1,6 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
   font-weight: 400;
 
   color-scheme: light dark;
@@ -46,7 +45,47 @@ h1 {
 main {
   max-width: 400px;
   background-color: #242424;
-  padding: 50px;
+  padding: 20px 50px 50px 50px;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border: 5px solid;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px;
+}
+
+.current span {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.current small {
+  font-style: italic;
+}
+
+form {
+  display: flex;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(211, 211, 211, 0.575);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: 200ms linear;
+  justify-content: center;
+}
+
+form:focus-within,
+form:hover {
+  border-color: white;
 }
 
 input {
@@ -54,10 +93,15 @@ input {
 }
 
 .weightInput {
-  margin-right: 5px;
+  text-indent: 10px;
   border: none;
-  padding-left: 10px;
   border-radius: 3px;
+  width: 70%;
+  font-size: 1.3em;
+}
+
+.weightSubmit {
+  width: 30%;
 }
 
 ul {
@@ -66,7 +110,9 @@ ul {
 
 li {
   list-style: none;
-  margin: 2px 0 2px 0;
+  margin: 5px 0 5px 0;
   border-style: dotted;
   border-width: 1px;
+  border-color: rgba(211, 211, 211, 0.575);
+  line-height: 40px;
 }

@@ -77,32 +77,33 @@
     <div class="current">
       <span>{{ currentWeight.weight }}</span>
       <small>Current weight (kg)</small>
-      <form @submit.prevent="addWeight">
-        <input type="number" step="0.1" v-model="weightInput" class="weightInput">
-        <input type="submit" value="Add weight"  class="weightSubmit">
-      </form>
+    </div>
+    <form @submit.prevent="addWeight">
+      <input type="number" step="0.1" v-model="weightInput" class="weightInput">
+      <input type="submit" value="Add weight"  class="weightSubmit">
+    </form>
 
-      <div v-if="weights && weights.length > 0">
-        <h2>Last 7 days</h2>
-        <div class="canvas-box">
-          <canvas ref="weightChartEl"></canvas>
-        </div>
+    <div v-if="weights && weights.length > 0">
+      <h2>Last 7 days</h2>
+      <div class="canvas-box">
+        <canvas ref="weightChartEl"></canvas>
+      </div>
 
-        <div class="weight-history">
-          <h2>Weight history</h2>
-          <ul>
-            <li v-for="weight in weights" :key="weight.date">
-              <span>
-                {{ weight.weight }}kg
-              </span>
-              <small>
-                {{ new Date(weight.date).toLocaleDateString() }}
-              </small>
-            </li>
-          </ul>
-        </div>
+      <div class="weight-history">
+        <h2>Weight history</h2>
+        <ul>
+          <li v-for="weight in weights" :key="weight.date">
+            <span>
+              {{ weight.weight }}kg
+            </span>
+            <small>
+              {{ new Date(weight.date).toLocaleDateString() }}
+            </small>
+          </li>
+        </ul>
       </div>
     </div>
+    
   </main>
 </template>
 
